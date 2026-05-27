@@ -570,7 +570,7 @@ img, video {
     border-bottom: 1px solid transparent;
   }
   .nav-links.active {
-    max-height: 500px;
+    max-height: 800px;
     padding: 1.5rem 0;
     border-bottom: 1px solid var(--border-gold);
   }

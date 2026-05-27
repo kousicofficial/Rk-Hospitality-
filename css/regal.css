@@ -1,0 +1,89 @@
+/* =========================================
+   REGAL SPECIFICS
+   Inherits heavily from global.css and gem.css structure
+   ========================================= */
+
+.hero-brand-logo {
+  height: 120px;
+  width: auto;
+  margin: 0 auto 2rem auto;
+  display: block;
+}
+
+.gallery-split {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.gallery-split img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  border: 1px solid var(--border-gold);
+}
+
+/* Premium Glass Card for Booking */
+.booking-section {
+  background-color: var(--bg-dark-secondary);
+  background-image: none;
+}
+.booking-section::before {
+  display: none;
+}
+.premium-glass-card {
+  background: var(--bg-dark);
+  border: 1px solid var(--border-gold);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Share about styles from GEM */
+.gem-about {
+  background-color: var(--bg-dark);
+}
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.about-text { flex: 1; }
+.about-text h2 { font-size: 2.5rem; color: var(--gold-primary); margin-bottom: 1rem; }
+.about-text p { color: var(--text-muted); font-size: 1rem; line-height: 1.8; margin-bottom: 2rem; }
+.gem-features { list-style: none; }
+.gem-features li { display: flex; align-items: center; gap: 10px; font-family: var(--font-body); color: var(--text-light); margin-bottom: 1rem; font-size: 1.05rem; }
+.gold-bullet { width: 8px; height: 8px; background-color: var(--gold-primary); border-radius: 50%; display: inline-block; }
+
+/* Share booking form styles from GEM */
+.booking-container {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem;
+}
+.booking-header { text-align: center; margin-bottom: 3rem; }
+.booking-header h2 { font-size: 2.5rem; color: var(--gold-primary); margin-bottom: 1rem; }
+.luxury-form { width: 100%; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.input-group { display: flex; flex-direction: column; gap: 0.5rem; }
+.input-group label { font-family: var(--font-body); font-size: 0.85rem; color: var(--gold-primary); text-transform: uppercase; letter-spacing: 1px; }
+.input-group input, .input-group select { background: transparent; border: none; border-bottom: 1px solid var(--border-gold); padding: 0.8rem 0; color: var(--text-light); font-family: var(--font-body); font-size: 1rem; outline: none; transition: border-color 0.3s ease; }
+.input-group input:focus, .input-group select:focus { border-bottom-color: var(--gold-primary); }
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator { filter: invert(1) sepia(1) saturate(5) hue-rotate(175deg); opacity: 0.5; }
+.form-actions { margin-top: 3rem; text-align: center; }
+.gold-submit-btn { background: var(--gold-primary); color: var(--bg-dark); border: none; padding: 1rem 3rem; font-family: var(--font-body); font-size: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; cursor: pointer; transition: background 0.3s ease; }
+.gold-submit-btn:hover { background: var(--gold-hover); }
+
+@media (max-width: 768px) {
+  .about-container { flex-direction: column-reverse; }
+  .form-grid { grid-template-columns: 1fr; }
+  .booking-container { padding: 2rem; }
+  .gallery-split { grid-template-columns: 1fr; }
+}

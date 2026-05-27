@@ -1,0 +1,201 @@
+/* =========================================
+   PROPERTY SHOWCASE (FLEX CENTERED ROW)
+   ========================================= */
+.property-showcase {
+  background-color: var(--bg-dark-secondary);
+}
+
+.property-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.property-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-dark);
+  border: 1px solid var(--border-gold);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  width: calc(33.333% - 2rem);
+  min-width: 300px;
+  max-width: 380px;
+}
+
+.property-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  border-color: var(--gold-primary);
+}
+
+.property-img {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.property-img img, .property-video-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.property-card:hover .property-img img,
+.property-card:hover .property-video-bg {
+  transform: scale(1.1);
+}
+
+.property-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(1, 10, 6, 0.8) 0%, transparent 100%);
+  opacity: 0.5;
+  transition: opacity 0.4s ease;
+}
+
+.property-card:hover .property-overlay {
+  opacity: 0.2;
+}
+
+.property-info {
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.property-info h3 {
+  font-size: 1.5rem;
+  color: var(--gold-primary);
+  margin-bottom: 0.5rem;
+}
+
+.property-info p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+
+.explore-btn {
+  display: inline-block;
+  margin-top: auto;
+  padding: 0.6rem 1.5rem;
+  background: transparent;
+  border: 1px solid var(--gold-primary);
+  color: var(--gold-primary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.explore-btn:hover {
+  background: var(--gold-primary);
+  color: var(--bg-dark);
+}
+
+/* =========================================
+   FOUNDER SECTION
+   ========================================= */
+.founder-section {
+  background-color: var(--bg-dark);
+}
+
+.founder-container {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.founder-image {
+  flex: 1;
+  position: relative;
+}
+
+.founder-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.founder-gold-border {
+  position: absolute;
+  top: 20px;
+  left: -20px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--gold-primary);
+  z-index: -1;
+  border-radius: 4px;
+}
+
+.founder-content {
+  flex: 1;
+}
+
+.stylish-font {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 3.5rem;
+  color: var(--gold-primary);
+  margin-bottom: 1rem;
+}
+
+.founder-content h4 {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.founder-content p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* =========================================
+   JOURNEY VIDEO
+   ========================================= */
+.journey-section {
+  background-color: var(--bg-dark-secondary);
+}
+
+.journey-video-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  border: 1px solid var(--gold-primary);
+  padding: 10px;
+  background: var(--bg-dark);
+}
+
+.journey-video-container video {
+  width: 100%;
+  display: block;
+}
+
+@media (max-width: 992px) {
+  .founder-container { flex-direction: column; }
+  .founder-gold-border { top: 10px; left: -10px; }
+  .founder-content { text-align: center; }
+  .left-align-div { margin: 0 auto 1.5rem auto; }
+  .property-card { width: calc(50% - 1.5rem); }
+}
+
+@media (max-width: 600px) {
+  .property-card { width: 100%; }
+}

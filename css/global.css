@@ -740,6 +740,7 @@ img, video {
   }
   
   .booking-modal-content {
+    box-sizing: border-box !important;
     margin: 0 !important;
     width: 90% !important;
     max-width: 380px !important;
@@ -765,5 +766,12 @@ img, video {
     height: 56.25vw !important; /* Perfect 16:9 landscape aspect ratio */
     min-height: 250px !important;
     max-height: 350px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .booking-modal-content h2 {
+    font-size: 1.6rem !important;
+    padding-right: 20px; /* Space for the X button */
   }
 }

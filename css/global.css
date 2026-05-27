@@ -699,7 +699,6 @@ img, video {
 @media (max-width: 768px) {
   .booking-modal-overlay {
     padding: 1rem !important; /* Reduce padding that might push the content */
-    display: flex !important;
     align-items: center !important;
     justify-content: center !important;
   }
@@ -713,4 +712,10 @@ img, video {
     padding: 2rem 1.5rem !important;
     transform: none !important; /* Remove translateY which can cause layout shifts on mobile */
   }
+}
+
+/* Fix: Don't crop logos/images that have text inside them */
+.about-media img, .about-media video {
+  object-fit: contain !important;
+  background: var(--bg-dark);
 }

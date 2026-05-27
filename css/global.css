@@ -694,3 +694,23 @@ img, video {
   75% { clip-path: circle(150% at 50% 50%); } 
   100% { clip-path: circle(0% at 50% 50%); }
 }
+
+/* Fix: Explicit centering for Popup Modal on Mobile */
+@media (max-width: 768px) {
+  .booking-modal-overlay {
+    padding: 1rem !important; /* Reduce padding that might push the content */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  .booking-modal-content {
+    margin: 0 auto !important; /* Fallback centering if flex fails */
+    left: 0 !important;
+    right: 0 !important;
+    width: 90% !important; /* Leave a small predictable gap */
+    max-width: 400px !important; /* Prevent it from stretching weirdly */
+    padding: 2rem 1.5rem !important;
+    transform: none !important; /* Remove translateY which can cause layout shifts on mobile */
+  }
+}

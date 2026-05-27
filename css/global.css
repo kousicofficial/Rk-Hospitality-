@@ -24,6 +24,13 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden !important;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
+}
+
 body {
   font-family: var(--font-body);
   background-color: var(--bg-dark);
@@ -720,30 +727,31 @@ img, video {
   background: var(--bg-dark);
 }
 
+
 /* Robust Mobile Fixes for Modal and Hero Backgrounds */
 @media (max-width: 768px) {
-  /* 1. Modal Centering: Ditch flexbox and use foolproof block centering */
+  /* 1. Modal Centering: Bulletproof flex layout */
   .booking-modal-overlay.show {
-    display: block !important; /* Force block layout */
-    padding: 10vh 5% 5vh 5% !important; /* Top padding acts as positioning */
-    overflow-y: auto !important; /* Allow scrolling if needed */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important; /* No padding to mess up width */
+    overflow: hidden !important; /* Prevent overlay from scrolling */
   }
   
   .booking-modal-content {
-    display: block !important;
-    position: relative !important;
-    margin: 0 auto !important; /* Perfect horizontal center */
-    left: auto !important;
-    right: auto !important;
-    width: 100% !important;
-    max-width: 400px !important;
-    transform: none !important;
+    margin: 0 !important;
+    width: 90% !important;
+    max-width: 380px !important;
+    max-height: 90vh !important;
+    overflow-y: auto !important; /* Internal scrolling only */
+    transform: none !important; /* Remove any translate animations */
+    padding: 2.5rem 1.5rem !important;
   }
   
-  /* Prevent 'X' button from overlapping text on narrow screens */
   .close-modal {
-    top: 10px !important;
-    right: 15px !important;
+    top: 15px !important;
+    right: 20px !important;
     z-index: 10;
   }
 
@@ -753,9 +761,9 @@ img, video {
     background-color: var(--bg-dark);
   }
   
-  /* Ensure the hero container is more landscape so it fits the contained image nicely */
   .hospitality-hero {
-    height: 50vw !important;
+    height: 56.25vw !important; /* Perfect 16:9 landscape aspect ratio */
     min-height: 250px !important;
+    max-height: 350px !important;
   }
 }

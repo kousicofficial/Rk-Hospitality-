@@ -95,6 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (cta.parentElement === header) {
         const ctaClone = cta.cloneNode(true);
         const li = document.createElement('li');
+        li.className = 'mobile-only-cta';
         li.appendChild(ctaClone);
         navLinks.appendChild(li);
         

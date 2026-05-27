@@ -633,3 +633,10 @@ img, video {
     text-align: center;
   }
 }
+
+/* Fix: Hide cloned mobile CTAs on desktop view */
+@media (min-width: 769px) {
+  .mobile-only-cta {
+    display: none !important;
+  }
+}

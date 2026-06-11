@@ -183,6 +183,125 @@
       </div>
     </section>
 
+    <!-- Booking Form Section -->
+    <section id="reservations" class="gem-about section-padding">
+      <div class="about-container" style="justify-content: center;">
+        <div class="booking-container" style="background: var(--bg-dark); border: 1px solid var(--gold-primary); padding: 3rem; border-radius: 8px; max-width: 600px; width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+          <div class="booking-header" style="text-align: center; margin-bottom: 2rem;">
+            <h2 style="color: var(--gold-primary); font-family: var(--font-heading); font-size: 2rem;">Reserve GEM Table</h2>
+            <div class="gold-divider-line" style="margin: 10px auto 0 auto;"></div>
+          </div>
+          
+          <form style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+              <div>
+                <label style="display: block; margin-bottom: 5px; color: var(--text-light); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Full Name</label>
+                <input type="text" required style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-gold); color: white; border-radius: 4px;">
+              </div>
+              <div>
+                <label style="display: block; margin-bottom: 5px; color: var(--text-light); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Email Address</label>
+                <input type="email" required style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-gold); color: white; border-radius: 4px;">
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+              <div>
+                <label style="display: block; margin-bottom: 5px; color: var(--text-light); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Phone Number</label>
+                <input type="tel" required style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-gold); color: white; border-radius: 4px;">
+              </div>
+              <div>
+                <label style="display: block; margin-bottom: 5px; color: var(--text-light); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">No. of Guests</label>
+                <input type="number" min="0" required style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-gold); color: white; border-radius: 4px;">
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+              <div>
+                <label style="display: block; margin-bottom: 5px; color: var(--text-light); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Booking For</label>
+                <select required style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-gold); color: white; border-radius: 4px;">
+                  <option value="" disabled selected style="color: black;">Select option...</option>
+                  <option value="myself" style="color: black;">Myself</option>
+                  <option value="someone_else" style="color: black;">Someone Else</option>
+                </select>
+              </div>
+              <div>
+                <label style="display: block; margin-bottom: 5px; color: var(--text-light); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Attending Person Phone</label>
+                <input type="tel" style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-gold); color: white; border-radius: 4px;">
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+              <div>
+                <label style="display: block; margin-bottom: 5px; color: var(--text-light); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Date</label>
+                <input type="date" required style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-gold); color: white; border-radius: 4px; color-scheme: dark;">
+              </div>
+              <div>
+                <label style="display: block; margin-bottom: 5px; color: var(--text-light); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Timing</label>
+                <input type="time" required style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-gold); color: white; border-radius: 4px; color-scheme: dark;">
+              </div>
+            </div>
+            <button type="submit" style="margin-top: 1.5rem; width: 100%; padding: 14px; background: #25D366; color: white; font-weight: 600; text-transform: uppercase; border: none; border-radius: 4px; cursor: pointer; font-size: 1.1rem; letter-spacing: 1px; transition: background 0.3s ease;"><i class="fa-brands fa-whatsapp" style="font-size: 1.2rem; margin-right: 8px; vertical-align: middle;"></i> Book Via WhatsApp</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="booking-modal-overlay">
+      <div class="booking-modal-content" style="background: var(--bg-dark); border: 1px solid var(--gold-primary); padding: 3rem; border-radius: 8px; max-width: 600px; width: 90%; position: relative;">
+        <span class="close-modal" style="position: absolute; top: 15px; right: 25px; font-size: 2rem; cursor: pointer; color: var(--text-muted);">&times;</span>
+        
+        <div class="booking-header" style="text-align: center; margin-bottom: 2rem;">
+          <h2 style="color: var(--gold-primary); font-family: var(--font-heading); font-size: 2rem;">Reserve GEM Table</h2>
+          <div class="gold-divider-line" style="margin-top: 10px;"></div>
+        </div>
+        
+        <form style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+            <div>
+              <label style="display: block; margin-bottom: 5px; color: var(--text-light);">Full Name</label>
+              <input type="text" required style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-gold); color: white; border-radius: 4px;">
+            </div>
+            <div>
+              <label style="display: block; margin-bottom: 5px; color: var(--text-light);">Email Address</label>
+              <input type="email" required style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-gold); color: white; border-radius: 4px;">
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+            <div>
+              <label style="display: block; margin-bottom: 5px; color: var(--text-light);">Phone Number</label>
+              <input type="tel" required style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-gold); color: white; border-radius: 4px;">
+            </div>
+            <div>
+              <label style="display: block; margin-bottom: 5px; color: var(--text-light);">No. of Guests</label>
+              <input type="number" min="0" required style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-gold); color: white; border-radius: 4px;">
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+            <div>
+              <label style="display: block; margin-bottom: 5px; color: var(--text-light);">Booking For</label>
+              <select required style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-gold); color: white; border-radius: 4px;">
+                <option value="" disabled selected style="color: black;">Select option...</option>
+                <option value="myself" style="color: black;">Myself</option>
+                <option value="someone_else" style="color: black;">Someone Else</option>
+              </select>
+            </div>
+            <div>
+              <label style="display: block; margin-bottom: 5px; color: var(--text-light);">Attending Person Phone</label>
+              <input type="tel" style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-gold); color: white; border-radius: 4px;">
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+            <div>
+              <label style="display: block; margin-bottom: 5px; color: var(--text-light);">Date</label>
+              <input type="date" required style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-gold); color: white; border-radius: 4px; color-scheme: dark;">
+            </div>
+            <div>
+              <label style="display: block; margin-bottom: 5px; color: var(--text-light);">Timing</label>
+              <input type="time" required style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-gold); color: white; border-radius: 4px; color-scheme: dark;">
+            </div>
+          </div>
+          <button type="submit" style="margin-top: 1rem; width: 100%; padding: 12px; background: #25D366; color: white; font-weight: 600; text-transform: uppercase; border: none; border-radius: 4px; cursor: pointer; font-size: 1.1rem; transition: background 0.3s ease;"><i class="fa-brands fa-whatsapp" style="font-size: 1.2rem; margin-right: 8px; vertical-align: middle;"></i> Book Via WhatsApp</button>
+        </form>
+      </div>
+    </div>
   </main>
 
   <!-- Professional Footer -->

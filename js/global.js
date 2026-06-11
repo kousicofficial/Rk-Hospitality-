@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     AOS.init({
       once: true,
       offset: 50,
-      duration: 1000,
+      duration: 600,
       easing: 'ease-in-out',
     });
   }
@@ -130,4 +130,57 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+});
+
+// WhatsApp Form Submission Logic
+document.addEventListener("DOMContentLoaded", () => {
+  const forms = document.querySelectorAll('form');
+  
+  forms.forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault(); // Prevent standard submission
+      
+      // Determine page name
+      let pageName = document.body.getAttribute('data-page') || document.title;
+      // Format pageName nicely if it's a known data-page attribute
+      if (pageName === 'banquet') pageName = 'RK Grande';
+      else if (pageName === 'stardom') pageName = 'Stardome';
+      else if (pageName === 'regal') pageName = 'RK Regal';
+      else if (pageName === 'nexus') pageName = 'RK Nexus';
+      else if (pageName === 'gem') pageName = 'GEM Restaurant Royale';
+      else if (pageName === 'index') pageName = 'RK Hospitality Home';
+      
+      let message = `*New Booking Request*\n*From:* ${pageName}\n\n`;
+      
+      // Get all inputs
+      const elements = form.querySelectorAll('input, select, textarea');
+      elements.forEach(el => {
+        let labelText = '';
+        const labelEl = el.previousElementSibling;
+        
+        if (labelEl && labelEl.tagName.toLowerCase() === 'label') {
+          labelText = labelEl.innerText.trim();
+        } else if (el.closest('div') && el.closest('div').querySelector('label')) {
+          labelText = el.closest('div').querySelector('label').innerText.trim();
+        } else {
+          labelText = el.getAttribute('name') || el.getAttribute('placeholder') || 'Field';
+        }
+        
+        let val = el.value;
+        if (el.tagName.toLowerCase() === 'select' && el.selectedIndex >= 0) {
+           val = el.options[el.selectedIndex].text;
+        }
+        
+        if (val) {
+          message += `*${labelText}:* ${val}\n`;
+        }
+      });
+      
+      const whatsappNumber = "919600624445";
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+      
+      window.open(whatsappURL, '_blank');
+    });
+  });
 });
